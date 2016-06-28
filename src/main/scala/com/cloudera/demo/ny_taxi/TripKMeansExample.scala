@@ -4,10 +4,13 @@ import com.cloudera.demo.ny_taxi.pojo.NyTaxiYellowTripBuilder
 import org.apache.spark.mllib.clustering.KMeans
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.sql.SQLContext
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 object TripKMeansExample {
   def main(args:Array[String]): Unit = {
+
+
     if (args.length == 0) {
       println("Args: <runLocal> <kuduMaster> " +
         "<TaxiTripTableName> " +
@@ -41,6 +44,8 @@ object TripKMeansExample {
 
     sqlContext.read.options(kuduOptions).format("org.kududb.spark.kudu").load.
       registerTempTable("ny_taxi_trip")
+
+    sqlContext.sql("select * from ny_taxi_trip").registerTempTable()
 
     val vectorRDD = sqlContext.sql("select * from ny_taxi_trip").map( r => {
       val trip = NyTaxiYellowTripBuilder.build(r)
