@@ -13,7 +13,7 @@
       <kafka.version>0.9.0-kafka-2.0.1</kafka.version>
       <kudu.version>0.9.0</kudu.version>
       <scala.binary.version>2.10</scala.binary.version>
-      <solr.version>4.10.3-cdh5.7.1</solr.version>
+      <solr.version>8.8.2</solr.version>
       <top.dir>${project.basedir}/..</top.dir>
       <hadoop.version>2.6.0-cdh5.7.1</hadoop.version>
     </properties>
