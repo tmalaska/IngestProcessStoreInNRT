@@ -15,7 +15,7 @@
       <scala.binary.version>2.10</scala.binary.version>
       <solr.version>4.10.3-cdh5.7.1</solr.version>
       <top.dir>${project.basedir}/..</top.dir>
-      <hadoop.version>2.6.0-cdh5.7.1</hadoop.version>
+      <hadoop.version>2.7.0</hadoop.version>
     </properties>
 
     <build>
